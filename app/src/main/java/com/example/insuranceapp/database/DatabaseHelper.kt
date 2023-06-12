@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class DatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, "Userdata", null, 1) {
     override fun onCreate(po: SQLiteDatabase?) {
-        po?.execSQL("CREATE TABLE Userdata (username TEXT PRIMARY KEY, password TEXT, Email TEXT, PhoneNumber TEXT, PolicyNumber TEXT)")
+        po?.execSQL("CREATE TABLE Userdata (username TEXT PRIMARY KEY, password TEXT, Email TEXT, PhoneNumber TEXT, PolicyNumber TEXT, CarModel TEXT, Year TEXT, LicencePlate TEXT, DateInsured TEXT, Description TEXT)")
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
@@ -30,6 +30,27 @@ class DatabaseHelper(context: Context) :
         values.put("Email", Email)
         values.put("PhoneNumber", PhoneNumber)
         values.put("PolicyNumber", PolicyNumber)
+        val result = p0.insert("Userdata", null, values)
+        if (result == 1.toLong()) {
+            return false
+        }
+        return true
+    }
+
+    fun insertdata2(
+        CarModel : String,
+        Year: String,
+        LicencePlate: String,
+        DateInsured: String,
+        Description: String
+    ): Boolean {
+        val p0 = this.writableDatabase
+        val values = ContentValues()
+        values.put("username", CarModel)
+        values.put("Year", Year)
+        values.put("LicencePlate", LicencePlate)
+        values.put("DateInsured", DateInsured)
+        values.put("Description", Description)
         val result = p0.insert("Userdata", null, values)
         if (result == 1.toLong()) {
             return false
