@@ -26,7 +26,7 @@ class Success : AppCompatActivity() {
         }
         val button2 = findViewById<Button>(R.id.Addclaim)
         button2.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, ClaimsActivity::class.java)
             startActivity(intent)
         }
         val button3 = findViewById<Button>(R.id.AddAsset)
