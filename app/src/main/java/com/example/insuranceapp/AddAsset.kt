@@ -42,11 +42,10 @@ class AddAsset : AppCompatActivity() {
             val yearrtext = yearr.text.toString()
             val Lisencetext = Lisence.text.toString()
             val Dateinsurtext = Dateinsur.text.toString()
-            val Desctext = Desc.text.toString()
-            val savedata = db.insertdata2(carmodtext, yearrtext, Lisencetext, Dateinsurtext,Desctext)
+            val savedata = db.insertdata2(carmodtext, yearrtext, Lisencetext, Dateinsurtext)
 
             if (TextUtils.isEmpty(
-                    Desctext
+                    yearrtext
                 )
             ) {
                 Toast.makeText(
@@ -66,4 +65,3 @@ class AddAsset : AppCompatActivity() {
         }
     }
 }
-
