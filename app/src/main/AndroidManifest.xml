@@ -27,6 +27,15 @@
         <activity
             android:name="Success"
             android:exported="true" />
+        <activity
+            android:name="AddAsset"
+            android:exported="true" />
+        <activity
+            android:name="ProfileActivity"
+            android:label="ProfileActivity" />
+        <activity
+            android:name="ClaimsActivity"
+            android:label="ClaimsActivity" />
 
     </application>
 
