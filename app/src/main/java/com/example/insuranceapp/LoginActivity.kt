@@ -3,8 +3,6 @@ package com.example.insuranceapp
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.text.style.ClickableSpan
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -14,7 +12,9 @@ import com.example.insuranceapp.database.DatabaseHelper
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var edituser: EditText
+    companion object {
+        lateinit var edituser: EditText
+    }
     private lateinit var editpword: EditText
     private lateinit var loginbtn: Button
     private lateinit var dbh: DatabaseHelper
@@ -52,4 +52,5 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
 }
