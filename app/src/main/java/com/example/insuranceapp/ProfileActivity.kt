@@ -23,7 +23,6 @@ class ProfileActivity : AppCompatActivity() {
         if (cursor != null && cursor.moveToFirst()) {
             val usernameColumnIndex = cursor.getColumnIndex("username")
             val emailColumnIndex = cursor.getColumnIndex("Email")
-            val PolicyNumberColumnIndex = cursor.getColumnIndex("PolicyNumber")
             val PhoneNumberColumnIndex = cursor.getColumnIndex("PhoneNumber")
 
             var foundUsername = false
@@ -31,7 +30,6 @@ class ProfileActivity : AppCompatActivity() {
             do {
                 val username = cursor.getString(usernameColumnIndex)
                 val email = cursor.getString(emailColumnIndex)
-                val PolicyNumber = cursor.getString(PolicyNumberColumnIndex)
                 val PhoneNumber = cursor.getString(PhoneNumberColumnIndex)
 
                 if (username ==username1) {
@@ -39,11 +37,8 @@ class ProfileActivity : AppCompatActivity() {
                     val textView1 = findViewById<TextView>(R.id.fullName_field)
                     textView1.text = "Username: $username"
 
-                    val textView3 = findViewById<TextView>(R.id.policyNo_field)
-                    textView3.text = "Policy Number: $PolicyNumber"
-
                     val textView4 = findViewById<TextView>(R.id.phoneNo_field)
-                    textView4.text = "Policy Number: $PhoneNumber"
+                    textView4.text = "Phone Number: $PhoneNumber"
 
                     val textView2 = findViewById<TextView>(R.id.email_field)
                     textView2.text = "Email: $email"

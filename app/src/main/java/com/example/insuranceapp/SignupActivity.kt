@@ -35,7 +35,6 @@ class SignupActivity : AppCompatActivity() {
         cpword = findViewById(R.id.password2)
         Email = findViewById(R.id.email)
         PhoneNumber = findViewById(R.id.phonenumber)
-        PolicyNumber = findViewById(R.id.policynumber)
         signupbtn = findViewById(R.id.registerbutton)
         db = DatabaseHelper(this)
 
@@ -45,10 +44,9 @@ class SignupActivity : AppCompatActivity() {
             val cpwordtext = cpword.text.toString()
             val Emailtext = Email.text.toString()
             val PhoneNumbertext = PhoneNumber.text.toString()
-            val PolicyNumbertext = PolicyNumber.text.toString()
-            val savedata = db.insertdata(unametext, pwordtext, Emailtext, PhoneNumbertext, PolicyNumbertext)
+            val savedata = db.insertdata(unametext, pwordtext, Emailtext, PhoneNumbertext)
 
-            if (TextUtils.isEmpty(unametext) || TextUtils.isEmpty(pwordtext) || TextUtils.isEmpty(Emailtext) || TextUtils.isEmpty(PhoneNumbertext) || TextUtils.isEmpty(PolicyNumbertext) || TextUtils.isEmpty(
+            if (TextUtils.isEmpty(unametext) || TextUtils.isEmpty(pwordtext) || TextUtils.isEmpty(Emailtext) || TextUtils.isEmpty(PhoneNumbertext) || TextUtils.isEmpty(
                     cpwordtext
                 )
             ) {

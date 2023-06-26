@@ -60,13 +60,7 @@ class Success : AppCompatActivity() {
 
         val button2 = findViewById<Button>(R.id.Addclaim)
         button2.setOnClickListener {
-            val intent = Intent(this, ClaimsActivity::class.java)
-            startActivity(intent)
-        }
-
-        val button3 = findViewById<Button>(R.id.AddAsset)
-        button3.setOnClickListener {
-            val intent = Intent(this, AddAsset::class.java)
+            val intent = Intent(this, ClaimsActivity2::class.java)
             startActivity(intent)
         }
     }
