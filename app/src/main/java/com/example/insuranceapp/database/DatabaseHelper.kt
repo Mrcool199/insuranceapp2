@@ -10,7 +10,7 @@ class DatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, "Userdata", null, 1) {
     override fun onCreate(po: SQLiteDatabase?) {
         po?.execSQL("CREATE TABLE Userdata (username TEXT PRIMARY KEY, password TEXT," +
-                " Email TEXT, PhoneNumber TEXT, PolicyNumber TEXT, description TEXT )")
+                " Email TEXT, PhoneNumber TEXT, date TEXT, time TEXT, PostcodeSuburb TEXT, Address TEXT, description TEXT )")
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
@@ -21,8 +21,7 @@ class DatabaseHelper(context: Context) :
         username: String,
         password: String,
         Email: String,
-        PhoneNumber: String,
-        PolicyNumber: String
+        PhoneNumber: String
     ): Boolean {
         val p0 = this.writableDatabase
         val values = ContentValues()
@@ -30,7 +29,6 @@ class DatabaseHelper(context: Context) :
         values.put("password", password)
         values.put("Email", Email)
         values.put("PhoneNumber", PhoneNumber)
-        values.put("PolicyNumber", PolicyNumber)
         val result = p0.insert("Userdata", null, values)
         if (result == 1.toLong()) {
             return false
@@ -60,6 +58,12 @@ class DatabaseHelper(context: Context) :
     fun insertData3(db: SQLiteDatabase?, username: String, desc: String) {
         db?.execSQL("UPDATE Userdata SET description = '$desc' WHERE username = '$username'")
     }
+    fun insertData4(db: SQLiteDatabase?, username: String, date1: String, time1: String) {
+        db?.execSQL("UPDATE Userdata SET date = '$date1', time = '$time1' WHERE username = '$username'")
+    }
+    fun insertData5(db: SQLiteDatabase?, username: String, PostcodeSuburb: String, Address1: String) {
+        db?.execSQL("UPDATE Userdata SET PostcodeSuburb = '$PostcodeSuburb', Address = '$Address1' WHERE username = '$username'")
+    }
 
     fun checkuserpass(username: String, password: String): Boolean {
         val p0 = this.writableDatabase
@@ -75,7 +79,7 @@ class DatabaseHelper(context: Context) :
 
     fun getText(): Cursor? {
         val db = this.readableDatabase
-        val query = "SELECT username, Email, PolicyNumber, PhoneNumber FROM Userdata"
+        val query = "SELECT username, Email, PhoneNumber FROM Userdata"
         return db.rawQuery(query, null)
     }
 }
