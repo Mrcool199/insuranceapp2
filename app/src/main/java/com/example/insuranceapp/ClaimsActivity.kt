@@ -5,6 +5,15 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.insuranceapp.database.DatabaseHelper
+//From christiaan
+import android.content.ContentValues
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
+import android.provider.MediaStore
+//
+
+//insert the image to sqlite
 
 class ClaimsActivity : AppCompatActivity() {
 
@@ -65,12 +74,38 @@ class ClaimsActivity : AppCompatActivity() {
         startActivityForResult(intent, IMAGE_REQUEST_CODE)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK) {
-            val selectedImageUri = data?.data
-            imageView.setImageURI(selectedImageUri)
-            imageView.tag = selectedImageUri
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+    if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK) {
+        val selectedImageUri: Uri? = data?.data
+        imageView.setImageURI(selectedImageUri)
+        imageView.tag = selectedImageUri
+
+        // Save the image to the database
+        selectedImageUri?.let {
+            val imageBitmap: Bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(it))
+
+            // Store the image in the MediaStore
+            val contentResolver = contentResolver
+            val contentValues = ContentValues().apply {
+                put(MediaStore.Images.Media.DISPLAY_NAME, "image_${System.currentTimeMillis()}.jpeg")
+                put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+            }
+            val imageUri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+
+            // Save the image to the database using your dbHelper
+            val dbHelper = DatabaseHelper(this)
+            dbHelper.insertImageData(dbHelper.writableDatabase, username1, imageUri.toString())
+
+            Toast.makeText(this, "Image saved to database", Toast.LENGTH_SHORT).show()
         }
     }
 }
+fun insertImageData(db: SQLiteDatabase, username: String, imageUri: String) {
+    val contentValues = ContentValues().apply {
+        put("username", username)
+        put("image_uri", imageUri)
+    }
+    db.insert("your_table_name", null, contentValues)
+}
+
