@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Platinum"
         android:supportsRtl="true"
         android:theme="@style/Theme.InsuranceApp"
         tools:targetApi="31" >
@@ -35,6 +35,15 @@
             android:label="ProfileActivity" />
         <activity
             android:name="ClaimsActivity"
+            android:label="ClaimsActivity" />
+        <activity
+            android:name="ClaimsActivity2"
+            android:label="ClaimsActivity" />
+        <activity
+            android:name="ClaimsActivity3"
+            android:label="ClaimsActivity" />
+        <activity
+            android:name="ClaimsActivity4"
             android:label="ClaimsActivity" />
 
     </application>
