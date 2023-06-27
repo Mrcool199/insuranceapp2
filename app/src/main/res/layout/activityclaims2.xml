@@ -51,70 +51,71 @@
                 android:textStyle="bold" />
             <TextView
                 android:layout_marginTop="10dp"
+                android:id="@+id/WhenWhereText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Tell us what happened during/prior/after accident, add picture of damaged part and add police report if there is one"
+                android:layout_height="wrap_content"
+                android:text="When?"
                 android:textColor="@color/black"
-                android:textSize="20dp"></TextView>
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <EditText
-                    android:id="@+id/textView1"
-                    android:layout_width="183dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/custom_edittext"
-                    android:drawablePadding="8dp"
-                    android:hint="Type in here:"
-                    android:padding="8dp"
-                    android:paddingStart="8dp"
-                    android:textColor="@color/black" />
-                <LinearLayout
-                    android:layout_width="43pt"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/card1"
-                        android:layout_width="100dp"
-                        android:layout_height="120dp"
-                        android:layout_gravity="right"
-                        android:clickable="true"
-                        android:contentDescription="icon"
-                        android:gravity="right"
-                        android:src="@drawable/placeholder" />
-
-                    <Button
-                        android:id="@+id/button1"
-                        android:layout_width="97dp"
-                        android:layout_height="40dp"
-                        android:clickable="true"
-                        android:contentDescription="icon"
-                        android:gravity="center"
-                        android:text="Add photo"
-                        android:textSize="25px"
-                        android:src="@drawable/untied" />
-                </LinearLayout>
             </LinearLayout>
-            <Button
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="53dp"
-                android:id="@+id/fileButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UPLOAD Police FORM" />
 
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="When did this incident happen?"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Event date"
+                android:padding="8dp"
+                android:paddingStart="18dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Please insert the incident date in the format DD/MM/YYYY"
+                android:textSize="15dp" />
+            <EditText
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext"
+                android:drawablePadding="8dp"
+                android:hint="Event time"
+                android:padding="8dp"
+                android:paddingStart="18dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Please insert the incident time in the format 00:00am/pm"
+                android:textSize="15dp" />
             <Button
                 android:id="@+id/AddAsset"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/lavender"
-                android:text="Add Claim"
+                android:text="Next page"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>

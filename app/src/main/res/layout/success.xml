@@ -40,14 +40,41 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <TextView
-                android:id="@+id/loginText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Home page"
-                android:textAlignment="center"
-                android:textColor="@color/lavender"
-                android:textSize="36sp"
+                android:orientation="horizontal"
+                android:padding="0dp">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:text="Policy active"
+                    android:textColor="@color/black"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/Contact"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Contact"
+                    android:textSize="13dp"
+                    android:backgroundTint="@color/GreenBlue"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What would you like to do?"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -55,58 +82,46 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="171dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_weight="1"
-                    android:text="Status:"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <LinearLayout
-                    android:layout_width="43pt"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/card1"
-                        android:layout_width="100dp"
-                        android:layout_height="120dp"
-                        android:layout_gravity="right"
-                        android:clickable="true"
-                        android:contentDescription="icon"
-                        android:gravity="right"
-                        android:src="@drawable/placeholder" />
-
-                </LinearLayout>
             </LinearLayout>
             <Button
                 android:id="@+id/Profile"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/lavender"
+                android:backgroundTint="@color/DarkBlue"
                 android:text="Profile"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawablePadding="20dp"
                 android:textSize="18sp"
+                android:paddingStart="80sp"
+                android:gravity="start|center_vertical"
                 app:cornerRadius="20dp" />
+
             <Button
                 android:id="@+id/Addclaim"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/lavender"
-                android:text="Add Claim"
+                android:backgroundTint="@color/RoyalBlue"
+                android:text="New Claim"
+                android:drawableLeft="@drawable/baseline_file_24"
+                android:drawablePadding="20dp"
                 android:textSize="18sp"
+                android:paddingStart="70sp"
+                android:gravity="start|center_vertical"
                 app:cornerRadius="20dp" />
             <Button
-                android:id="@+id/AddAsset"
+                android:id="@+id/EmergencyServices"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/lavender"
-                android:text="Add Asset"
+                android:backgroundTint="@color/Orchid"
+                android:text="Emergency Services"
+                android:drawableLeft="@drawable/baseline_light_24"
+                android:drawablePadding="20dp"
                 android:textSize="18sp"
+                android:paddingStart="10sp"
+                android:gravity="start|center_vertical"
                 app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
