@@ -35,7 +35,7 @@ class Success : AppCompatActivity() {
                 if (username ==username1) {
                     foundUsername = true
                     val textView1 = findViewById<TextView>(R.id.textView1)
-                    textView1.text = "Username: $email"
+                    textView1.text = "Hi $username"
                     break // Exit the loop if the desired username is found
                 }
             } while (cursor.moveToNext())
@@ -61,6 +61,11 @@ class Success : AppCompatActivity() {
         val button2 = findViewById<Button>(R.id.Addclaim)
         button2.setOnClickListener {
             val intent = Intent(this, ClaimsActivity2::class.java)
+            startActivity(intent)
+        }
+        val button3 = findViewById<Button>(R.id.EmergencyServices)
+        button3.setOnClickListener {
+            val intent = Intent(this, EmergencyActivity::class.java)
             startActivity(intent)
         }
     }
