@@ -1,7 +1,9 @@
 package com.example.insuranceapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,12 +14,12 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var dbh: DatabaseHelper
     val username1 = LoginActivity.edituser.text.toString()
 
-    @SuppressLint("Range")
+    @SuppressLint("Range", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activityprofile)
 
-        dbh = DatabaseHelper(this) // Initialize the DatabaseHelper
+        dbh = DatabaseHelper(this)
 
         val cursor = dbh.getText()
         if (cursor != null && cursor.moveToFirst()) {
@@ -38,11 +40,11 @@ class ProfileActivity : AppCompatActivity() {
                     textView1.text = "Username: $username"
 
                     val textView4 = findViewById<TextView>(R.id.phoneNo_field)
-                    textView4.text = "Phone Number: $PhoneNumber"
+                    textView4.text = "$PhoneNumber"
 
                     val textView2 = findViewById<TextView>(R.id.email_field)
-                    textView2.text = "Email: $email"
-                    break // Exit the loop if the desired username is found
+                    textView2.text = "$email"
+                    break
                 }
             } while (cursor.moveToNext())
 
@@ -51,6 +53,11 @@ class ProfileActivity : AppCompatActivity() {
             }
         } else {
             Toast.makeText(this, "No contacts available", Toast.LENGTH_SHORT).show()
+        }
+        val button3 = findViewById<Button>(R.id.cancel)
+        button3.setOnClickListener {
+            val intent = Intent(this, Success::class.java)
+            startActivity(intent)
         }
     }
 }
