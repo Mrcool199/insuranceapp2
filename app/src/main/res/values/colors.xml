@@ -8,4 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#214ED3</color>
+    <color name="Rosered">#DF265E</color>
+    <color name="Orchid">#7F3E71</color>
+    <color name="RoyalBlue">#004197</color>
+    <color name="DarkBlue">#0000A3</color>
+    <color name="GreenBlue">#18A558</color>
+
+
 </resources>
