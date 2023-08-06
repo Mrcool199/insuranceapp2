@@ -37,15 +37,25 @@ Build and run the app on an Android emulator or physical device.
 **Screenshots:**
 
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/0890d8fa-3a77-479a-a181-e9aeecb5ad6d)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/a3b29853-5cce-4d7a-aee5-ee797c18f6cf)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/6ddee1df-0706-4c19-8eff-e6348b0782b3)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/60b465f7-3066-49df-a625-f5cc823c6c88)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/9d53954d-0d8d-4b72-ae30-9e4a23a19dcb)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/aaff90b6-1d1b-4144-a2ca-048e7a8a73d3)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/67f7f400-5fb5-405b-9710-443a357d59bc)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/7c334b70-8455-4332-92f1-10f39cd14372)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/5680dc18-5e16-4cb6-8bd3-7725d281163d)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/ca8e7c1a-279c-4272-9ec5-5ac4a0aa5a5d)
+
 ![image](https://github.com/Mrcool199/insuranceapp2/assets/119867639/f776a891-4275-4ce0-84a4-d2b0974255a1)
 
 Contact:
