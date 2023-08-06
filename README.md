@@ -60,4 +60,4 @@ Build and run the app on an Android emulator or physical device.
 
 Contact:
 
-If you have any questions or feedback, feel free to contact me the developer at. We appreciate your interest in the Insurance App!
+If you have any questions or feedback, feel free to contact me the developer. I appreciate your interest in the Insurance App!
